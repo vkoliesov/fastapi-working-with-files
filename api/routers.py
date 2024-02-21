@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from api import read_file
+from api import catalog
 
 api_router = APIRouter()
-api_router.include_router(read_file.router)
+api_router.include_router(catalog.router)
