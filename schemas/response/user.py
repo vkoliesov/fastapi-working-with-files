@@ -10,4 +10,4 @@ class UserOut(BaseModel):
     last_name: str = Field(example="Koliesov")
     email: str = Field(example="kolesov0703@gmail.com")
     gender: str = Field(example="male")
-    birth_date: date = Field(example="1995-03-07")
+    birth_date: date = Field(example="1996-03-07")
