@@ -90,9 +90,9 @@ class CatalogManager:
                 users.c.date_of_birth >= birth_dates_from,
                 users.c.date_of_birth <= birth_dates_to
             )
-        if age_from and age_to and not age:
-            birth_dates_from, _ = calculate_dates_by_age(age)
-            _, birth_dates_to = calculate_dates_by_age(age)
+        elif age_from and age_to:
+            birth_dates_from, _ = calculate_dates_by_age(age_from)
+            _, birth_dates_to = calculate_dates_by_age(age_to)
             query = query.where(
                 users.c.date_of_birth >= birth_dates_from,
                 users.c.date_of_birth <= birth_dates_to

@@ -20,7 +20,6 @@ async def get_data(
     age_from: Optional[int] = None,
     age_to: Optional[int] = None,
 ):
-    print(category)
     results = await CatalogManager.get_catalogs(
         category=category,
         gender=gender,
@@ -29,6 +28,4 @@ async def get_data(
         age_from=age_from,
         age_to=age_to
     )
-    # print(f"{results=}")
-    print(type(results))
     return results or []
