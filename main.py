@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from db import database
 from api.routers import api_router
+from services.files import write_data_from_file
 
 
 origins = [
@@ -22,6 +23,7 @@ app.add_middleware(
 @app.on_event("startup")
 async def startup():
     await database.connect()
+    await write_data_from_file()
 
 
 @app.on_event("shutdown")

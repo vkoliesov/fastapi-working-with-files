@@ -1,7 +1,7 @@
 from models import User
 from db import database
 
-users = User.metadat.tables.get("user")
+users = User.metadata.tables.get("user")
 
 
 class UseryManager:
