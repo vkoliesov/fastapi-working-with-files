@@ -9,6 +9,8 @@ class User(BaseMixin, Base):
     """User model."""
 
     __tablename__ = "user"
+
+    category = sa.Column(sa.String(50))
     first_name = sa.Column(sa.String(120))
     last_name = sa.Column(sa.String(120))
     email = sa.Column(sa.String(120), unique=True)
@@ -18,5 +20,6 @@ class User(BaseMixin, Base):
         server_default=Gender.FEMALE.name
     )
     birth_date = sa.Column(
-        sa.Date, nullable=False, server_default=sa.func.now()
+        sa.Date, nullable=False,
+        server_default=sa.func.now(),
     )

@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from api import catalog
+from api import user
 
 api_router = APIRouter()
-api_router.include_router(catalog.router)
+api_router.include_router(user.router)

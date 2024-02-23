@@ -6,6 +6,7 @@ class UserOut(BaseModel):
     """User output model."""
 
     id: int = Field(example=27)
+    category: str = Field(example="food")
     first_name: str = Field(example="Vladyslav")
     last_name: str = Field(example="Koliesov")
     email: str = Field(example="kolesov0703@gmail.com")
