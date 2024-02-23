@@ -69,4 +69,6 @@ class UserManager:
             query = query.where(users.c.date_of_birth >= date_to)
         if filters.get("limit"):
             query = query.limit(filters.get("limit"))
+        if filters.get("offset"):
+            query = query.offset(filters.get("offset"))
         return await database.fetch_all(query)

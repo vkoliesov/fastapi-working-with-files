@@ -14,6 +14,7 @@ class UserFilter(BaseModel):
     age_from: Optional[int] = Field(default=None, example="18")
     age_to: Optional[int] = Field(default=None, example="27")
     limit: Optional[int] = Field(default=100, example="20")
+    offset: Optional[int] = Field(default=0, example="20")
 
     @validator("age_from", "age_to")
     def validate_age(cls, v):
