@@ -67,4 +67,6 @@ class UserManager:
                 days=YEAR_DAYS * filters.get("age_to")
             )
             query = query.where(users.c.date_of_birth >= date_to)
+        if filters.get("limit"):
+            query = query.limit(filters.get("limit"))
         return await database.fetch_all(query)
