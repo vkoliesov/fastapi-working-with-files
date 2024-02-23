@@ -46,7 +46,7 @@ class UserManager:
             query = query.where(users.c.category == filters.get("category"))
         if filters.get("gender"):
             query = query.where(
-                users.c.gender == filters.get("gender").lower()
+                users.c.gender == filters.get("gender").upper()
             )
         if filters.get("birth_date_from") and filters.get("birth_date_to"):
             query = query.where(

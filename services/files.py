@@ -19,7 +19,7 @@ async def write_data_from_file():
     async for values in read_file(DATA_FILE_FOLDER_PATH):
         category, first_name, last_name, email, gender, birth_date = values
 
-        return await UserManager.get_or_create_user(
+        await UserManager.get_or_create_user(
             {
                 "category": category,
                 "first_name": first_name,
